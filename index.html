@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#341A67">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Exhorter Exam Study</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+<section id="home">
+  <header class="hero"><div><div class="eyebrow">Church of God</div><h1>Exhorter Exam Study</h1><p id="bankStatus">Loading question bank…</p></div></header>
+  <div class="stats"><div><b id="studied">0</b><span>Studied</span></div><div><b id="mastered">0</b><span>Mastered</span></div><div><b id="avg">—</b><span>Exam avg.</span></div></div>
+  <h2>Practice exams</h2>
+  <div class="grid"><button class="card primary wide" data-exam="50"><b>Full 50-Question Exam</b><span>Random exam from all 648 items</span></button><button class="card" data-exam="10"><b>Quick 10</b><span>Fast practice round</span></button><button class="card" data-exam="25"><b>Practice 25</b><span>Medium-length test</span></button></div>
+  <h2>Study</h2>
+  <div class="grid"><button class="card" id="studyAll"><b>Study All</b><span>Reveal answers and self-grade</span></button><button class="card" id="missed"><b>Missed Questions</b><span>Review trouble spots</span></button><button class="card" id="scripture"><b>Scripture Memory</b><span>Declaration of Faith references</span></button><button class="card" id="flagged"><b>Flagged Questions</b><span>Questions saved for review</span></button></div>
+  <h2>Categories</h2><div class="grid" id="categories"></div>
+  <button class="reset" id="reset">Reset saved progress</button>
+  <p class="foot">Progress is stored only in this browser on this device.</p>
+</section>
+
+<section id="session" class="hidden">
+  <div class="topbar"><button id="back">‹ Home</button><div class="progress"><div id="progressFill"></div></div><button id="flag">☆</button></div>
+  <div class="meta"><span id="mode"></span><span id="counter"></span></div>
+  <article class="panel">
+    <div class="question" id="question"></div>
+    <div id="choices"></div>
+    <div id="studyControls" class="hidden"><button class="action primary" id="reveal">Reveal Answer</button><div class="answer hidden" id="answer"></div><div class="two hidden" id="grade"><button class="action good" id="knew">I got it right</button><button class="action bad" id="didnt">I missed it</button></div></div>
+    <button class="action primary hidden" id="next">Next Question</button>
+    <div class="source" id="source"></div>
+  </article>
+</section>
+
+<section id="results" class="hidden">
+  <button class="backOnly" id="resultsHome">‹ Home</button>
+  <article class="panel result"><h1>Exam Complete</h1><div class="score" id="score"></div><p id="scoreText"></p><div id="breakdown"></div><button class="action primary" id="again">Take Another 50</button><button class="action" id="reviewMissed">Review Missed Questions</button></article>
+</section>
+</main>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body></html>
